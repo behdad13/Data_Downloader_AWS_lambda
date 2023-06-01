@@ -41,4 +41,17 @@ ls -ltr iesolib
 
 4. Now, run ```lambda_valodator.py```, and you will see that the files are downloaded and stored in your AWS S3.
 
+5. lambda function:will be completed.
+
+
+Data Source:
+
+<img width="814" alt="image" src="https://github.com/behdad13/Data_Downloader_AWS_lambda/assets/58978680/b40bdd21-fa80-495f-8117-f7e51e8ec028">
+
+
+Data Destination on S3:
+
+<img width="1068" alt="image" src="https://github.com/behdad13/Data_Downloader_AWS_lambda/assets/58978680/7f0cb2fd-3f8f-4a6f-ba37-656e05e0aa5d">
+
+
 
