@@ -1,5 +1,5 @@
 import requests
 
 def download_file(file):
-    res = requests.get(f'https://data.gharchive.org/{file}')
+    res = requests.get(f'http://reports.ieso.ca/public/RealtimeMktTotals/{file}')
     return res
