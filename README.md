@@ -39,10 +39,25 @@ ls -ltr iesolib
 * BUCKET_NAME : ieso-downloader (your bucket name)
 * FILE_PREFIX : landing/ieso-weekly-activity (landing path)
 
-4. Now, run ```lambda_valodator.py```, and you will see that the files are downloaded and stored in your AWS S3.
+4. Now, run ```lambda_valodator.py``` on your IDE, and you will see that the files are downloaded and stored in your AWS S3.
 
-5. lambda function:will be completed.
+5. The final step using the IDE involves creating a .zip file for your AWS Lambda function. Follow these commands:
 
+```
+cd ghalib
+zip -r ../ieso-downloader.zip .
+cd ..
+zip -g ieso-downloader.zip lambda_function.py download.py upload.py util.py
+```
+
+----------
+6. Lambda Function configuration: Once you have created the .zip file, uploading it to AWS Lambda is a straightforward process. Remember to set the necessary environment variables, adjust the memory size and timeout values to prevent any potential errors. Additionally, ensure proper access management by assigning the AmazonS3FullAccess IAM role to the Lambda function. Finally, execute the function and retrieve your data in your designated S3 Bucket.
+
+7. Schedule Lambda Function using AWS EventBridge: To automate the data download process, you can schedule your AWS Lambda function according to your desired schedule type. Depending on the frequency of your data updates (whether hourly, daily, monthly, or otherwise), AWS EventBridge allows you to conveniently schedule the Lambda function to fetch the data automatically.
+
+8. If you wish to customize the code for your specific data downloader, you can easily modify the "download.py" and "utils.py" files according to your requirements. These files are responsible for the downloading and utility functions, respectively. By making changes to these files, you can tailor the functionality to suit your specific data retrieval needs.
+
+-------
 
 Data Source:
 
