@@ -1,6 +1,6 @@
 import boto3
 from botocore.errorfactory import ClientError
-
+from datetime import datetime, timedelta
 
 def get_client():
     return boto3.client('s3')
@@ -30,10 +30,8 @@ def upload_bookmark(bucket, file_prefix, bookmark_file, bookmark_contents):
         Body=bookmark_contents.encode('utf-8')
     )
 
-from datetime import datetime, timedelta
 
-from datetime import datetime, timedelta
-
+# change data based on your data pattern --> in my case, the format is 'PUB_RealtimeMktTotals_YYYYMMDDHH.csv'
 def get_next_file_name(prev_file):
     date_part = prev_file.split('_')[2].split('.')[0]
     year = int(date_part[:4])
